@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(250, 235, 215, 0.779);
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper h1 {
+  font-size: 3.2rem;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  color: #1f618d;
+}
+
+.container {
+  width: 70vw;
+  display: flex;
+}
+
+.panel {
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  height: 75vh;
+  border-radius: 2.5rem;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.3s ease-in;
+  cursor: pointer;
+}
+
+.panel h3 {
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  position: absolute;
+  bottom: 20px;
+  bottom: 20px;
+  margin-left: 50px;
+  opacity: 0;
+  color: white;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.5s;
+}
+
+@media (max-width: 750px) {
+  .wrapper h1 {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper h1 {
+    font-size: 2.3rem;
+  }
+
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
