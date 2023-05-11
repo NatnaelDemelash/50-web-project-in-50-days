@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
+
+:root {
+  --line-border-fill: #21b986;
+  --line-empty-color: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f7fb;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  width: 380px;
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.progress-container::before {
+  content: "";
+  position: absolute;
+  background: var(--line-empty-color);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+.progress {
+  position: absolute;
+  background: var(--line-border-fill);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  background: #fff;
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid var(--line-empty-color);
+}
+
+.circle.active {
+  border: 3px solid var(--line-border-fill);
+}
+
+.btn {
+  padding: 1rem 2.2rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--line-border-fill);
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:disabled {
+  background: var(--line-empty-color);
+  cursor: not-allowed;
+}
