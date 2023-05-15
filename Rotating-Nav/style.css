@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Bai Jamjuree", sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  background-color: #333;
+  color: #222;
+}
+
+.container {
+  background-color: #fafafa;
+  transform-origin: top left;
+  transition: transform 0.7s linear;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+.content {
+  padding: 5rem;
+  line-height: 1.5rem;
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle-container .circle {
+  position: relative;
+  height: 218px;
+  width: 218px;
+  background: coral;
+  border-radius: 50%;
+  transition: transform 0.5s linear;
+}
+
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.content h1 {
+  margin-bottom: 10px;
+  margin-top: 3rem;
+  font-size: 2.4rem;
+}
+
+.content small {
+  font-size: 18px;
+  color: #555;
+  font-style: italic;
+}
+
+.content p {
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+nav {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+nav ul li {
+  margin: 50px 0;
+  transform: translateX(-100px);
+  transition: transform 0.4s ease-in;
+}
+
+nav i {
+  margin: 0 12px;
+}
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150px);
+}
+
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200px);
+}
